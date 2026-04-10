@@ -1,5 +1,7 @@
 # biz-skill
 
+> 🇰🇷 [한국어 README](./README.ko.md)
+
 **Business strategy diagnosis engine with 18-axis pattern matching — diagnose and design strategies using success and failure counter-examples.**
 
 ## Prerequisites

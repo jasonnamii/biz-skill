@@ -1,32 +1,10 @@
 ---
 name: biz-skill
-description: |
-  사업 전략 진단·전략·판정 엔진. 18축(기반4·성장5·전략4·실행5) 패턴 매칭 기반. 사업 상황을 입력하면 성공·실패 패턴 대조 후 상황 조건부 전략 도출. 서사·맥락 중심 산출물. 대조군 필수.
-  P1: 비즈스킬, biz skill, 사업전략, 비즈니스전략, 사업분석, 전략진단, 성공패턴, 실패패턴, 사업판단.
-  P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 어떻게 성공해, strategize, diagnose.
-  P3: business strategy, pattern matching, competitive moat, pivot strategy, scale-up, growth engine.
-  P5: .md로, 전략 보고서로, 진단서로.
-  NOT: 재무모델(→financial-model), 사업계획서(→bp-guide), 인물분석(→person-profiler), 히트패턴(→super-skill), 기획프로세스(→planning-skill).
+description: "18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단. P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘. P3: business strategy, pattern matching, moat, pivot, scale-up. P5: 보고서로, 진단서로. NOT: 재무모델(→financial-model), 사업계획서(→bp-guide)."
 "@uses":
-  - references/f1-market.md
-  - references/f2-bizmodel.md
-  - references/f3-moat.md
-  - references/f4-innovation.md
-  - references/g1-launch.md
-  - references/g2-growth.md
-  - references/g3-scaleup.md
-  - references/g4-global.md
-  - references/g5-platform.md
-  - references/s1-pivot.md
-  - references/s2-alliance.md
-  - references/s3-diversify.md
-  - references/s4-exit.md
-  - references/e1-org.md
-  - references/e2-capital.md
-  - references/e3-survival.md
-  - references/e4-regulation.md
-  - references/e5-timing.md
   - references/report-template.md
+  - references/narrative-template.md
+  - references/f1-market.md
 ---
 
 # Biz Skill — 사업 전략 패턴 매칭 엔진
@@ -72,7 +50,7 @@ description: |
 
 ### 공통: 1차 스크리닝
 
-18축을 ●핵심/○관련/-무관으로 1줄 판정 → ● 축만 스포크 로드 (최대 4개).
+18축을 ●핵심/○관련/-무관으로 1줄 판정 → ● 축만 스포크 로드 (최대 4개). **조건부 참조**: 18개 스포크는 모두 references/ 디렉토리에 상주. 스크리닝 결과에 따라 필요한 축만 `→ references/{코드}-{명}.md 참조` 포인터로 로드하며, @uses는 핵심 템플릿 3개만 상시 로드.
 
 ### 스포크 로딩 — Python 인덱서 우선
 

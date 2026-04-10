@@ -2,6 +2,10 @@
 
 **Business strategy diagnosis engine with 18-axis pattern matching — diagnose and design strategies using success and failure counter-examples.**
 
+## Prerequisites
+
+- **Claude Cowork or Claude Code** environment
+
 ## Goal
 
 Business strategy shouldn't be generic. Biz-Skill diagnoses your actual business situation across 18 axes — Foundation, Growth, Strategy, and Execution — then matches patterns against known success and failure cases. Every recommendation pairs with a counter-example. Output is narrative, context-driven, and evidence-based.

@@ -1,6 +1,6 @@
 ---
 name: biz-skill
-description: "18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. 일반/TURBO(스포크 병렬 Agent 로드·매칭) 2모드. P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단, 터보전략, 비즈스킬 터보, TURBO. P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 터보로 전략 짜줘, turbo strategy. P3: business strategy, pattern matching, moat, pivot, scale-up, turbo strategy, parallel pattern matching. P5: 보고서로, 진단서로. NOT: 재무모델(→financial-model), 사업계획서(→bp-guide)."
+description: "v1.0 18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. 일반/TURBO(스포크 병렬 Agent 로드·매칭) 2모드. P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단, 터보전략, 비즈스킬 터보, TURBO. P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 터보로 전략 짜줘, turbo strategy. P3: business strategy, pattern matching, moat, pivot, scale-up, turbo strategy, parallel pattern matching. P5: 보고서로, 진단서로. NOT: 재무모델(→financial-model), 사업계획서(→bp-guide)."
 version: 1.2.0
 "@uses":
   - references/report-template.md

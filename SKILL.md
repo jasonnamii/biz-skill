@@ -1,14 +1,8 @@
 ---
 name: biz-skill
+description: "v1.0 18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. 일반/TURBO(스포크 병렬 Agent 로드·매칭) 2모드. P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단, 터보전략, 비즈스킬 터보, TURBO. P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 터보로 전략 짜줘, turbo strategy. P3: business strategy, pattern matching, moat, pivot, scale-up, turbo strategy, parallel pattern matching. P5: 보고서로, 진단서로. NOT: 재무모델(→financial-model), 사업계획서(→bp-guide)."
 version: 1.2.0
-description: |
-  v1.0 18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. 일반/TURBO(스포크 병렬 Agent 로드·매칭) 2모드.
-  P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단, 터보전략, 비즈스킬 터보, TURBO.
-  P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 터보로 전략 짜줘, turbo strategy.
-  P3: business strategy, pattern matching, moat, pivot, scale-up, turbo strategy, parallel pattern matching.
-  P5: 보고서로, 진단서로.
-  NOT: 재무모델(→financial-model), 사업계획서(→bp-guide).
-"@uses":
+uses:
   - references/report-template.md
   - references/narrative-template.md
   - references/f1-market.md
@@ -141,6 +135,64 @@ description: |
 ```
 
 ---
+
+## PRE_WRITE — 진단·전략·판정 리포트 작성 직전 룰
+
+**목적:** SCR·서사·판정 *작성 시점*에 단언형·수치+출처·조건부 강제. §4.5 리포트 변환의 사후 + PRE_WRITE 사전 = 이중 게이트.
+
+### 5룰 (작성 직전 강제)
+
+| # | 룰 | 전략 결로 변환 | FAIL 신호 |
+|---|---|---|---|
+| 1 | **SCR 단문** | Situation·Complication·Resolution 각 1~2문장 ≤50자 | 80자+·중첩 |
+| 2 | **단일 권고** | Resolution = 1전략 (조건부 OK). 다중 ✗ | "A도 B도 고려" |
+| 3 | **수치+출처** | 모든 패턴·전략 = 수치 + 사례 출처 1조 | "성공한 사례가 많다" 추상 |
+| 4 | **조건부 명시** | "유효 조건·무효 조건" verbatim 명시 | 무조건적 단언 |
+| 5 | **AI식 사전회피** | "전략적 우위", "지속 가능한 성장", "차별화된 접근" — 작성 단계 차단 | 컨설팅 관용어 |
+
+### 모드별 PRE_WRITE
+
+- **진단**: SCR 1~2문장 ≤50자. 매칭 등급 단언
+- **전략**: 권고 = 조건부 1전략. 액션 동사시작
+- **판정 (A vs B)**: 결론 1문장. 유효·무효 조건 verbatim
+
+### 자체검증
+
+| # | 체크 | 위반 |
+|---|------|------|
+| 1 | SCR 각 ≤50자? | 초과 = 압축 |
+| 2 | 조건부 명시? | 무조건 단언 = 조건 추가 |
+| 3 | 수치+출처? | 누락 = 사례 보완 |
+| 4 | AI식 컨설팅 관용어 hit? | hit ≥ 1 = 평문 변환 |
+
+---
+
+
+---
+
+## §CONFIRM_GATE — 송출 직전 형 컨펌 (3단계 가드)
+
+**목적:** PRE_WRITE 자가신고 우회 차단. 자체검증 통과 = 송출 ✗ → 형 컨펌 후 송출.
+
+**발동:** 산출물 송출 *직전* 1회.
+
+**형식 (verbatim):**
+```
+🔍 송출 전 검토 부탁드려요. AI 티·번역투·장황 있나요?
+[OK / 수정 / 재작성]
+```
+
+**규칙:**
+- 형 OK → 최종 송출
+- 형 수정 → 형 지적 부분만 PRE_WRITE 재진입 → 재출력
+- 형 재작성 → 모드 처음부터 재실행
+
+**SCOPE_OUT (컨펌 면제):**
+- ≤5줄 답변·단답·확인성·실행보고
+- 진단 본문 (대화 내 분석, 산출물 ✗)
+- 일반대화·핑퐁·컨펌게이트 자체
+
+**CHECK:** 산출물 송출인데 컨펌게이트 미발동 = FAIL → 송출 폐기·재출력.
 
 ## §INV NO_WORK_LABEL (산출물·대화 본질 보호)
 

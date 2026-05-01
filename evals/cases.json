@@ -1,63 +1,24 @@
 {
-  "version": "1.0",
-  "description": "biz-skill 회귀 검증 샘플 케이스. 3개 모드 각 1건. scripts/validate.py에서 로드.",
-  "threshold": {
-    "axis_match_rate": 0.7,
-    "description": "기대 축 중 ≥70% 일치 시 PASS"
-  },
+  "skill": "biz-skill",
+  "version": "post-doctor-2026-04-26",
   "cases": [
     {
-      "id": "case-A-diagnose",
-      "mode": "diagnose",
-      "input": {
-        "situation": "B2B SaaS, 시드 라운드 마감 후 18개월, ARR 400K$, 리텐션 85%. PMF 근접했으나 CAC 상승 우려. 팀 12명. 핵심 고객 중견 제조사 30개사.",
-        "question": "우리 현재 어디에 있고 위험/기회는?"
-      },
-      "expected_axes_primary": ["F1", "F2", "G1"],
-      "expected_axes_secondary": ["F3", "E2"],
-      "expected_output_contains": [
-        "1차 스크리닝",
-        "패턴 매칭",
-        "대조군",
-        "축간 영향"
-      ],
-      "notes": "PMF 직전 단계 전형. F1시장·F2BM·G1(0→1)이 핵심. F3해자·E2자본이 관련축."
+      "id": "trigger-basic",
+      "input": "biz-skill 발동",
+      "expect": "스킬 정상 발동 + SKILL.md 흐름 1단계 진입",
+      "fail_if": "발동 누락 또는 NOT 키워드 오발동"
     },
     {
-      "id": "case-B-strategy",
-      "mode": "strategy",
-      "input": {
-        "situation": "D2C 뷰티 브랜드, 런칭 3년차 ARR 8M$. 12개월 전 대비 성장률 15% → 8%로 둔화. 신규 CAC 3배 상승. 반복 구매율 35%.",
-        "question": "어떻게 성장 정체를 돌파할까?"
-      },
-      "expected_axes_primary": ["G2", "F3", "E1"],
-      "expected_axes_secondary": ["F2", "S3"],
-      "expected_output_contains": [
-        "조건부 전략",
-        "유효 조건",
-        "무효 조건",
-        "대조 패턴",
-        "액션 플랜"
-      ],
-      "notes": "1→10 단계 성장 정체 전형. G2성장·F3해자·E1조직이 핵심."
+      "id": "minimal-output",
+      "input": "기본 사용법 보여줘",
+      "expect": "허브 본문 ≤10KB 유지하며 P5 형식대로 산출",
+      "fail_if": "본문 비대 또는 형식 위반"
     },
     {
-      "id": "case-C-judge",
-      "mode": "judge",
-      "input": {
-        "situation": "현재 사업 런웨이 9개월. 현 노선 유지 시 다음 라운드 밸류에이션 플랫 예상. 인접 카테고리로 피봇 옵션 존재(기존 IP 60% 재활용 가능).",
-        "question": "피봇할까 vs 현 노선 유지할까?"
-      },
-      "expected_axes_primary": ["S1", "E3", "E2"],
-      "expected_axes_secondary": ["F1", "S4"],
-      "expected_output_contains": [
-        "양쪽 패턴",
-        "판단 기준",
-        "리스크 매트릭스",
-        "재평가 기한"
-      ],
-      "matching_grade_expected": "B- or lower (시나리오 분석 전환 가능성)",
-      "notes": "자본 고갈+피봇 갈림길. S1피봇·E3위기·E2자본 핵심. 매칭 B- 이하 시 §3⑧ 시나리오 분석 전환."
+      "id": "edge-empty-input",
+      "input": "(빈 입력 또는 모호한 입력)",
+      "expect": "PREFLIGHT에서 입력 검증·핑퐁 또는 STOP+보고",
+      "fail_if": "그냥 진행하여 잘못된 산출물 생성"
     }
   ]
 }

@@ -1,6 +1,13 @@
 ---
 name: biz-skill
-description: "v1.0 18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. 일반/TURBO(스포크 병렬 Agent 로드·매칭) 2모드. P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단, 터보전략, 비즈스킬 터보, TURBO. P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 터보로 전략 짜줘, turbo strategy. P3: business strategy, pattern matching, moat, pivot, scale-up, turbo strategy, parallel pattern matching. P5: 보고서로, 진단서로. NOT: 재무모델(→financial-model), 사업계획서(→bp-guide)."
+description: |
+  v1.0 18축 패턴 매칭 기반 비즈니스 전략 엔진. 성공·실패 패턴 대조로 조건부 전략 도출. 일반/TURBO 2모드.
+    P1: 비즈스킬, 사업전략, 전략진단, 성공패턴, 실패패턴, 사업판단, 터보전략, 비즈스킬 터보, TURBO, biz skill, business strategy, 전략수립, 사업방향, 사업판단, 사업기회, 사업진단, 전략기획, 비즈모델, 사업모델, 성장전략, 경쟁전략, 시장전략, 스타트업전략, 스케일업전략, 피벗전략, 사업전환, 전략분석.
+    P2: 전략 짜줘, 진단해줘, 분석해줘, 판단해줘, 터보로 전략 짜줘, turbo strategy, 사업 방향 잡아줘, 어떻게 해야 해, 전략 어떻게 가져가, 이게 맞아.
+    P3: business strategy, pattern matching, moat, pivot, scale-up, turbo strategy, competitive analysis, growth strategy.
+    P4: 사업 방향 결정 전, 전략 재검토시, 중요한 사업 판단이 필요할 때.
+    P5: 보고서로, 진단서로, .md로.
+    NOT: 재무모델(→financial-model), 사업계획서(→bp-guide), 정책기획(→policy-planning), 협상(→negotiation-skill), 투자판단(→investment-skill).
 version: 1.2.0
 uses:
   - references/report-template.md

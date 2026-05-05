@@ -170,17 +170,45 @@ uses:
 
 ---
 
-## §CONFIRM_GATE
-산출물 송출 직전 형 컨펌 1회. → `paper-engine/references/_common/confirm-gate.md`
+## §CONFIRM_GATE — 송출 직전 형 컨펌 (3단계 가드)
 
+**목적:** PRE_WRITE 자가신고 우회 차단. 자체검증 통과 = 송출 ✗ → 형 컨펌 후 송출.
 
-## §INV NO_WORK_LABEL
-산출물·대화 작업 라벨 ZERO. → `paper-engine/references/no-work-label.md`
+**발동:** 산출물 송출 *직전* 1회.
 
+**형식 (verbatim):**
+```
+🔍 송출 전 검토 부탁드려요. AI 티·번역투·장황 있나요?
+[OK / 수정 / 재작성]
+```
 
-## 🚨 MUST cascade → paper-engine
-모든 산출물 paper-engine MUST 경유. → `paper-engine/references/_common/cascade-must.md`
+**규칙:**
+- 형 OK → 최종 송출
+- 형 수정 → 형 지적 부분만 PRE_WRITE 재진입 → 재출력
+- 형 재작성 → 모드 처음부터 재실행
 
+**SCOPE_OUT (컨펌 면제):**
+- ≤5줄 답변·단답·확인성·실행보고
+- 진단 본문 (대화 내 분석, 산출물 ✗)
+- 일반대화·핑퐁·컨펌게이트 자체
+
+**CHECK:** 산출물 송출인데 컨펌게이트 미발동 = FAIL → 송출 폐기·재출력.
+
+## §INV NO_WORK_LABEL (산출물·대화 본질 보호)
+
+항목정의RULE산출물·대화 = 인간 언어. 작업 라벨 ZERO. (1만 페이지 1단어 = FAIL)판정"이 단어, 이 대화 밖 사람이 사전 없이 읽을 수 있나?" NO → 작업 라벨 → 금지ALLOW업계 전문용어(BEP·KPI·MECE·MVP·LTV·CAC·CAGR·TAM·SAM·SOM·moat·pivot·SCR) · 고유명사(회사명·산업명) · 법조문CONVERT라벨 발견 → 실명·평문 풀어쓰기. 예) "F1\~G5·S1\~S4·E1\~E5 18축" → 실제 축 이름 / "스포크·매칭 등급 A/B+/B-/C" → 결과만 노출(코드 ✗) / "스크리닝 ●○-" → "핵심·관련·무관" 평문SELF_CHECK§4.5 리포트 변환 단계에서 자체 스캔. 1개라도 발견 = 차단·재작성. paper-engine cascade 경유 시 INV 13 자동 적용
+
+---
+
+## 🚨 MUST cascade → paper-engine (절대규칙)
+
+**리포트 산출 = paper-engine 허브 MUST 경유.** 이 스킬 단독 md/html 출력 = FAIL.
+
+- **진입점:** §4.5 리포트 변환 직후 paper-engine 발동
+- **산출 포맷:** 기본 **순수 md** (div·style 금지)
+- **위반 감지:** md 파일에 div style, span style 삽입 = FAIL → 재작성
+
+---
 
 ## §5. 축간 연결 맵
 
